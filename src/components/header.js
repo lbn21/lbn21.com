@@ -1,5 +1,5 @@
 import * as React from "react"
-import PropTypes from "prop-types"
+import { useState } from "react"
 import { Link } from "gatsby"
 
 // CSS Imports
@@ -9,25 +9,25 @@ import { header, headerContainer, toggle, logo } from "./header.module.css"
 // LOGO
 import Logo from "./logo"
 
-const Header = ({ siteTitle }) => (
-  <header className={header}>
-    <div className={`${container} ${headerContainer}`}>
-      <div className={toggle}>---</div>
-      <div className={logo}>
-        <Link to="/">
-          <Logo height={20} />
-        </Link>
+import { Squeeze as Hamburger } from "hamburger-react"
+
+const Header = () => {
+  const [isOpen, setOpen] = useState(false)
+
+  return (
+    <header className={header}>
+      <div className={`${container} ${headerContainer}`}>
+        <div className={logo}>
+          <Link to="/">
+            <Logo height={20} />
+          </Link>
+        </div>
+        <div className={toggle}>
+          <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
+        </div>
       </div>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+    </header>
+  )
 }
 
 export default Header
