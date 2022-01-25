@@ -1,5 +1,18 @@
 .header {
-    background: rebeccapurple;
-    margin-bottom: 1.45rem;
+    color: #000;
 }
 
+.header-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.toggle {
+
+}
+
+.logo {
+    text-align: center;
+}

@@ -1,29 +1,33 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 
 // CSS Imports
-import {header} from "./header.module.css";
-import {container, h1, link} from "./layout.module.css";
+import { container } from "./layout.module.css"
+import { header, headerContainer, toggle, logo } from "./header.module.css"
 
-const Header = ({siteTitle}) => (
-    <header className={header}>
-        <div className={container}>
-            <h1 className={h1}>
-                <Link to="/" className={link}>
-                    {siteTitle}
-                </Link>
-            </h1>
-        </div>
-    </header>
+// LOGO
+import Logo from "./logo"
+
+const Header = ({ siteTitle }) => (
+  <header className={header}>
+    <div className={`${container} ${headerContainer}`}>
+      <div className={toggle}>---</div>
+      <div className={logo}>
+        <Link to="/">
+          <Logo height={20} />
+        </Link>
+      </div>
+    </div>
+  </header>
 )
 
 Header.propTypes = {
-    siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-    siteTitle: ``,
+  siteTitle: ``,
 }
 
 export default Header
