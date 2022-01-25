@@ -39,9 +39,7 @@ const Layout = ({ children }) => {
             marginTop: `2rem`,
           }}
         >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://lbn21.com">lbn21</a>
+          © {new Date().getFullYear()} lbn21, All Rights Reserved.
         </footer>
       </div>
     </>
