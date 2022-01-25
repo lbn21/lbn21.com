@@ -1,10 +1,7 @@
 import * as React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-import { mb2 } from "../components/layout.module.css"
 
 const IndexPage = () => (
   <Layout>
