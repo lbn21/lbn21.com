@@ -4,6 +4,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import {mb2} from "../components/layout.module.css";
+
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
@@ -15,7 +17,7 @@ const IndexPage = () => (
       quality={85}
       formats={["auto", "webp"]}
       alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
+      className={mb2}
     />
   </Layout>
 )
