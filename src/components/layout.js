@@ -15,6 +15,7 @@ import "sanitize.css"
 import "@fontsource/poppins/200.css"
 import "@fontsource/poppins/400.css"
 import "@fontsource/poppins/600.css"
+import "./variables.module.css"
 import "./global.css"
 
 import { container, mb2 } from "./layout.module.css"

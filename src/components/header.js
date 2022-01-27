@@ -23,7 +23,12 @@ const Header = () => {
           </Link>
         </div>
         <div className={toggle}>
-          <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
+          <Hamburger
+            toggled={isOpen}
+            toggle={setOpen}
+            size={20}
+            color={"var(--charcoal)"}
+          />
         </div>
       </div>
     </header>
