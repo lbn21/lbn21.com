@@ -20,9 +20,6 @@
     "react-helmet": "^6.1.0",
     "sanitize.css": "^13.0.0"
   },
-  "devDependencies": {
-    "prettier": "^2.5.1"
-  },
   "keywords": [
     "lbn21"
   ],
@@ -30,10 +27,13 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write {**/*,*}.{js,ts,jsx,tsx,css,scss,sass} --config ./.prettierrc",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "devDependencies": {
+    "prettier": "2.5.1"
   }
 }

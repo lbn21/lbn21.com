@@ -1,14 +1,29 @@
+/* LAYOUT */
 .container {
     margin: 0 auto;
     max-width: 1440px;
-    padding: 0 1.875rem;
+    padding: 0 1rem;
+    position: relative;
 }
 
-.h1 {
-    margin: 0;
+.section-xl {
+    padding: 8.75rem 0;
 }
 
-/* HELPERS */
+/* TYPOGRAPHY */
+
+.font-weight-normal {
+    font-weight: 400;
+}
+
+.font-weight-light {
+    font-weight: 200;
+}
+
+/* SPACING (margins and paddings) */
+.mt-2 {
+    margin-top: 2rem;
+}
 
 .mb-2 {
     margin-bottom: 2rem;
