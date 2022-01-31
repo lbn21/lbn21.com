@@ -1,0 +1,23 @@
+:root {
+    /* COLORS */
+    --charcoal: #404e5cff;
+    --black-coral: #4f6272ff;
+    --lavender-blue: #b7c3f3ff;
+    --cyclamen: #dd7596ff;
+    --rubine-red: #cf1259ff;
+    --white: #fff;
+
+    /* SIZES */
+    --font-size-m: 14px;
+    --font-size-d: 16px;
+    --logo-h: 1rem;
+    --toggle-height: 48px; /* used by hamburger-react npm package */
+
+    /* SPACING */
+    --p-x: 2rem;
+    --p-header-y: 1rem;
+    --p-header-x: 2rem;
+
+    /* ANIMATIONS */
+    --side-bar-delay: 0.2s;
+}

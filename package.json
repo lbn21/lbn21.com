@@ -14,11 +14,11 @@
     "gatsby-source-filesystem": "^4.5.2",
     "gatsby-transformer-sharp": "^4.5.0",
     "hamburger-react": "^2.4.1",
+    "modern-css-reset": "^1.4.0",
     "prop-types": "^15.8.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "sanitize.css": "^13.0.0"
+    "react-helmet": "^6.1.0"
   },
   "keywords": [
     "lbn21"

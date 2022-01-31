@@ -10,7 +10,7 @@ import {
     fontWeightNormal,
     mt2,
     mb2,
-} from '../components/layout.module.css'
+} from '../css/layout.module.css'
 
 const IndexPage = () => (
     <Layout>
@@ -30,12 +30,7 @@ const IndexPage = () => (
                 </h5>
             </div>
         </div>
-        <div
-            className={`${container} ${mt2} ${mb2}`}
-            style={{
-                height: 1000,
-            }}
-        >
+        <div className={`${container} ${mt2} ${mb2}`}>
             <p>Coming soon!!</p>
         </div>
     </Layout>

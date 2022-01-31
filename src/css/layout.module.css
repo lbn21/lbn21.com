@@ -2,7 +2,7 @@
 .container {
     margin: 0 auto;
     max-width: 1440px;
-    padding: 0 1rem;
+    padding: 0 var(--p-x);
     position: relative;
 }
 
@@ -20,6 +20,14 @@
     font-weight: 200;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
 /* SPACING (margins and paddings) */
 .mt-2 {
     margin-top: 2rem;
@@ -27,4 +35,11 @@
 
 .mb-2 {
     margin-bottom: 2rem;
+}
+
+/* LISTS */
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

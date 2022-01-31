@@ -3,15 +3,21 @@ import { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 
 // CSS Imports
-import { container } from './layout.module.css'
+import {
+    container,
+    listUnstyled,
+    fontWeightNormal,
+    uppercase,
+    letterSpacing2,
+} from '../css/layout.module.css'
 import {
     header,
     headerContainer,
-    isActive,
     menu,
+    isActive,
     toggle,
     logo,
-} from './header.module.css'
+} from '../css/header.module.css'
 
 // LOGO
 import Logo from './logo'
@@ -35,7 +41,7 @@ const Header = () => {
                 <div className={logo}>
                     <Link to="/">
                         {' '}
-                        <Logo height={16} />{' '}
+                        <Logo height="1rem" />{' '}
                     </Link>
                 </div>
                 <div className={toggle}>
@@ -43,15 +49,44 @@ const Header = () => {
                         toggled={isOpen}
                         toggle={setOpen}
                         size={16}
-                        color={'#fff'}
+                        hideOutline={true}
+                        color={'var(--charcoal)'}
                     />
                 </div>
             </div>
-            <div className={menu}>
-                <ul>
-                    <li>Link1</li>
-                    <li>Link2</li>
-                    <li>Link3</li>
+            <div className={`${menu}`}>
+                <ul className={listUnstyled}>
+                    <li>
+                        <h6
+                            className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
+                        >
+                            <a href="#">Home</a>
+                        </h6>
+                    </li>
+                    <li>
+                        {' '}
+                        <h6
+                            className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
+                        >
+                            <a href="#">About</a>
+                        </h6>
+                    </li>
+                    <li>
+                        {' '}
+                        <h6
+                            className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
+                        >
+                            <a href="#">Portfolio</a>
+                        </h6>
+                    </li>
+                    <li>
+                        {' '}
+                        <h6
+                            className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
+                        >
+                            <a href="#">Shop</a>
+                        </h6>
+                    </li>
                 </ul>
             </div>
         </header>

@@ -9,16 +9,16 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 
 import Header from './header'
-import 'sanitize.css'
+import 'modern-css-reset'
 
 // FONTS
 import '@fontsource/poppins/200.css'
 import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/600.css'
-import './variables.module.css'
-import './global.css'
+import '../css/root.module.css'
+import '../css/global.css'
 
-import { container, mt2, mb2 } from './layout.module.css'
+import { container, mt2, mb2 } from '../css/layout.module.css'
 
 const Layout = ({ children }) => {
     return (
