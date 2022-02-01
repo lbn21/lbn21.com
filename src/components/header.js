@@ -24,6 +24,9 @@ import Logo from './logo'
 
 import { Squeeze as Hamburger } from 'hamburger-react'
 
+// Check if window is defined (so if in the browser or in node.js).
+const isBrowser = typeof window !== 'undefined'
+
 const Header = () => {
     function syncHeight() {
         document.documentElement.style.setProperty(
@@ -31,7 +34,9 @@ const Header = () => {
             `${window.innerHeight}px`
         )
     }
-    window.addEventListener('resize', syncHeight)
+    if (isBrowser) {
+        window.addEventListener('resize', syncHeight)
+    }
 
     const [isOpen, setOpen] = useState(false)
 
