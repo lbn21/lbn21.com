@@ -4,10 +4,6 @@ html.no-scroll body {
     position: fixed;
 }
 
-html {
-    height: -webkit-fill-available;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -18,8 +14,6 @@ body {
     font-synthesis: none;
     -webkit-font-smoothing: antialiased;
     direction: ltr;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
 }
 
 @media (min-width: 992px) {

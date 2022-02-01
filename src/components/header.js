@@ -25,6 +25,14 @@ import Logo from './logo'
 import { Squeeze as Hamburger } from 'hamburger-react'
 
 const Header = () => {
+    function syncHeight() {
+        document.documentElement.style.setProperty(
+            '--window-inner-height',
+            `${window.innerHeight}px`
+        )
+    }
+    window.addEventListener('resize', syncHeight)
+
     const [isOpen, setOpen] = useState(false)
 
     useEffect(() => {
@@ -41,7 +49,7 @@ const Header = () => {
                 <div className={logo}>
                     <Link to="/">
                         {' '}
-                        <Logo height="1rem" />{' '}
+                        <Logo height="1rem" />
                     </Link>
                 </div>
                 <div className={toggle}>
@@ -64,7 +72,6 @@ const Header = () => {
                         </h6>
                     </li>
                     <li>
-                        {' '}
                         <h6
                             className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
                         >
@@ -72,7 +79,6 @@ const Header = () => {
                         </h6>
                     </li>
                     <li>
-                        {' '}
                         <h6
                             className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
                         >
@@ -80,7 +86,6 @@ const Header = () => {
                         </h6>
                     </li>
                     <li>
-                        {' '}
                         <h6
                             className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
                         >
