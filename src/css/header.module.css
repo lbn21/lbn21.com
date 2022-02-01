@@ -17,6 +17,7 @@
     --padding-y: calc(var(--p-header-y) * 2 + var(--toggle-height));
     padding: var(--padding-y) var(--padding-x);
     height: 100%;
+    height: -webkit-fill-available;
     width: 100%;
     background: var(--cyclamen);
     color: var(--charcoal);
@@ -28,6 +29,7 @@
     transition: opacity var(--side-bar-delay) ease-out;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .toggle {

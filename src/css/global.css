@@ -1,6 +1,10 @@
-html.no-scroll {
+html.no-scroll,
+html.no-scroll body {
     overflow: hidden;
-    height: 100%;
+    position: fixed;
+    height: 100vh;
+    /*  */
+    height: -webkit-fill-available;
 }
 
 body {
