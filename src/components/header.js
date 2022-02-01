@@ -42,7 +42,6 @@ const Header = () => {
 
     const [isOpen, setOpen] = useState(false)
     const modal = React.createRef()
-    let scrollY // we'll store the scroll position here
 
     useEffect(() => {
         if (isOpen) {
