@@ -15,13 +15,15 @@
 .menu {
     --padding-x: calc(var(--p-x) * 2);
     --padding-y: calc(var(--p-header-y) * 2 + var(--toggle-height));
-    padding: var(--padding-y) var(--padding-x);
-    height: var(--window-inner-height);
+
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    padding: var(--padding-y) var(--padding-x);
     background: var(--cyclamen);
     color: var(--charcoal);
-    position: fixed;
-    inset: 0;
     z-index: 2;
     opacity: 0;
     visibility: hidden;

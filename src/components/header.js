@@ -28,33 +28,51 @@ import { Squeeze as Hamburger } from 'hamburger-react'
 const isBrowser = typeof window !== 'undefined'
 
 const Header = () => {
-    function syncHeight() {
-        document.documentElement.style.setProperty(
-            '--window-inner-height',
-            `${window.innerHeight}px`
-        )
-    }
     if (isBrowser) {
+        function syncHeight() {
+            document.documentElement.style.setProperty(
+                '--window-inner-height',
+                `${window.innerHeight}px`
+            )
+        }
+
         window.addEventListener('resize', syncHeight)
+        syncHeight()
     }
 
     const [isOpen, setOpen] = useState(false)
+    const modal = React.createRef()
+    let scrollY // we'll store the scroll position here
 
     useEffect(() => {
         if (isOpen) {
+            //SHOW MENU
             document.documentElement.classList.add('no-scroll')
+
+            // block pointer events
+            modal.current.addEventListener('pointermove', preventDefault)
+            modal.current.addEventListener('touchmove', preventDefault)
         } else {
+            //HIDE MENU
             document.documentElement.classList.remove('no-scroll')
+
+            // resume pointer events
+            modal.current.removeEventListener('pointermove', preventDefault)
+            modal.current.removeEventListener('touchmove', preventDefault)
         }
-    }, [isOpen])
+    }, [isOpen, modal])
+
+    // helper function to run preventDefault
+    function preventDefault(e) {
+        e.preventDefault()
+    }
 
     return (
         <header className={`${header} ${isOpen ? isActive : ''}`}>
             <div className={`${container} ${headerContainer}`}>
                 <div className={logo}>
                     <Link to="/">
-                        {' '}
-                        <Logo height="1rem" />
+                        <Logo height="1rem" />{' '}
                     </Link>
                 </div>
                 <div className={toggle}>
@@ -67,7 +85,7 @@ const Header = () => {
                     />
                 </div>
             </div>
-            <div className={`${menu}`}>
+            <div className={`${menu}`} ref={modal}>
                 <ul className={listUnstyled}>
                     <li>
                         <h6

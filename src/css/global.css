@@ -1,7 +1,13 @@
 html.no-scroll,
 html.no-scroll body {
+    /* want to fix the height to the window height */
+    height: calc(var(--window-inner-height) - 1px);
+
+    /* want to block all overflowing content */
     overflow: hidden;
-    position: fixed;
+
+    /* want to exclude padding from the height */
+    box-sizing: border-box;
 }
 
 body {
