@@ -2,8 +2,9 @@ html.no-scroll,
 html.no-scroll body {
     overflow: hidden;
     position: fixed;
-    height: 100vh;
-    /*  */
+}
+
+html {
     height: -webkit-fill-available;
 }
 
@@ -17,6 +18,8 @@ body {
     font-synthesis: none;
     -webkit-font-smoothing: antialiased;
     direction: ltr;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 @media (min-width: 992px) {
