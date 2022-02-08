@@ -59,6 +59,8 @@ const IndexPage = ({ data }) => {
                                 key={i}
                                 src={imageData.thumbnailUrl}
                                 alt={imageData.title}
+                                width={150}
+                                height={150}
                             />
                         )
                     })}
