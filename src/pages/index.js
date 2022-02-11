@@ -13,7 +13,7 @@ import {
     mb2,
 } from '../css/layout.module.css'
 
-import { gallery } from '../css/index.module.css'
+import Gallery from '../components/gallery'
 
 export const query = graphql`
     {
@@ -54,20 +54,7 @@ const IndexPage = ({ data }) => {
                 </div>
             </div>
             <div className={`${container} ${mt2} ${mb2}`}>
-                <div className={gallery}>
-                    {images.map((image, i) => {
-                        const imageData = image.node
-                        return (
-                            <img
-                                key={i}
-                                src={imageData.thumbnailUrl}
-                                alt={imageData.title}
-                                width={150}
-                                height={150}
-                            />
-                        )
-                    })}
-                </div>
+                <Gallery images={images} />
             </div>
         </Layout>
     )

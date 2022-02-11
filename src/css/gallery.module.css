@@ -1,0 +1,10 @@
+.galleryContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    gap: 1rem;
+}
+
+.galleryContainer > img {
+    width: 100%;
+    height: auto;
+}

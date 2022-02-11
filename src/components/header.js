@@ -71,7 +71,7 @@ const Header = () => {
             <div className={`${container} ${headerContainer}`}>
                 <div className={logo}>
                     <Link to="/">
-                        <Logo height="1rem" />{' '}
+                        <Logo height="1rem" />
                     </Link>
                 </div>
                 <div className={toggle}>
