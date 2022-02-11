@@ -39,14 +39,17 @@ const IndexPage = ({ data }) => {
             <div className={sectionXl}>
                 <div className={container}>
                     <h1 className={fontWeightLight}>
-                        Hello there!
+                        {/*Hello there!*/}
+                        Lorem ipsum!
                         <br />
                         <span className={fontWeightNormal}>
-                            I'm Jakub Marciniszyn
+                            {/*I'm Jakub Marciniszyn*/}
+                            Lorem ipsum dolor sit
                         </span>
                     </h1>
                     <h5 className={fontWeightLight}>
-                        Amateur photographer with 7 years of experience
+                        Asperiores aspernatur beatae blanditiis cupidit
+                        {/*Amateur photographer with 7 years of experience*/}
                     </h5>
                 </div>
             </div>

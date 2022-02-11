@@ -1,14 +1,18 @@
-const axios = require('axios')
 const crypto = require('crypto')
+const { promises: fs } = require('fs')
 
 exports.sourceNodes = async ({ actions }) => {
     const { createNode } = actions
 
-    const fetchImages = () =>
-        axios.get(`https://jsonplaceholder.typicode.com/albums/1/photos`)
-    const res = await fetchImages()
+    //this is where your images will be fetched from. This can be replaced with API call
+    const jsonData = await fs.readFile(
+        __dirname + '/src/data/images.json',
+        'utf-8'
+    )
 
-    res.data.map((image, i) => {
+    const imagesData = JSON.parse(jsonData)
+
+    imagesData.map((image, i) => {
         const imageNode = {
             // Required fields
             id: `${i}`,
