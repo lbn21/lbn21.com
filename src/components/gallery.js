@@ -5,7 +5,7 @@ import { galleryContainer } from '../css/gallery.module.css'
 const COLUMNS = 1 //default columns count
 const CONFIG = [
     {
-        breakpoint: 768,
+        breakpoint: 700,
         columns: 2,
     },
     {
