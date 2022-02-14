@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import LazyLoad from 'vanilla-lazyload'
+
 import { galleryContainer } from '../css/gallery.module.css'
 
 const COLUMNS = 1 //default columns count
@@ -51,6 +53,8 @@ const Gallery = ({ images }) => {
         }
 
         window.addEventListener('resize', handleResize)
+        const lazyLoadInstance = new LazyLoad()
+        lazyLoadInstance.update()
 
         //cleanup
         return () => {
@@ -65,8 +69,12 @@ const Gallery = ({ images }) => {
                 const imageData = image.node
                 return (
                     <img
+                        className={'lazy'}
                         key={i}
-                        src={imageData.thumbnailUrl}
+                        data-src={imageData.thumbnailUrl}
+                        src={
+                            'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPjxwYXRoIGQ9Ik0wIDBoMXYxSDAiIGZpbGw9IiNiN2MzZjNmZiIvPjwvc3ZnPg=='
+                        }
                         alt={imageData.title}
                         width={315}
                         height={315}
