@@ -56,7 +56,7 @@ const Gallery = ({ images }) => {
         return () => {
             window.removeEventListener('resize', handleResize)
         }
-    })
+    }, [])
 
     return (
         <div className={galleryContainer}>
