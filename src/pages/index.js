@@ -20,7 +20,6 @@ export const query = graphql`
         allImages {
             edges {
                 node {
-                    thumbnailUrl
                     title
                     url
                 }

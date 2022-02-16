@@ -27,7 +27,6 @@ exports.sourceNodes = async ({ actions }) => {
             // Other fields that you want to query with graphQl
             title: image.title,
             url: image.url,
-            thumbnailUrl: image.thumbnailUrl,
         }
 
         // Get content digest of node. (Required field)

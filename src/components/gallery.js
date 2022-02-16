@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import LazyLoad from 'vanilla-lazyload'
 
 import { galleryContainer } from '../css/gallery.module.css'
@@ -26,19 +25,26 @@ const CONFIG = [
 
 const Gallery = ({ images }) => {
     //column count
-    const [columns, setColumns] = React.useState(COLUMNS)
+    const [columns, setColumns] = React.useState(null)
 
     //re-render if col no changes
-    // React.useEffect(() => {
-    //     console.log(columns)
-    // }, [columns])
+    React.useEffect(() => {
+        if (!columns) return
+
+        const galleryData = new Array(columns).fill(null).map((_) => [])
+        for (let i = 0; i < images.length; i++) {
+            const col = i % columns
+            galleryData[col].push(images[i].node)
+        }
+        console.log(galleryData)
+    }, [columns])
 
     React.useEffect(() => {
         function handleResize() {
             let cols = COLUMNS //start with default count
 
             //we loop through config backwards to match the highest resolution first
-            breakpoints: for (let i = CONFIG.length - 1; i >= 0; i--) {
+            for (let i = CONFIG.length - 1; i >= 0; i--) {
                 const { breakpoint, columns } = CONFIG[i]
                 //check if breakpoint is matched
                 if (
@@ -46,13 +52,16 @@ const Gallery = ({ images }) => {
                         .matches
                 ) {
                     cols = columns
-                    break breakpoints //match found. break
+                    break //match found. break
                 }
             }
             setColumns(cols)
         }
 
         window.addEventListener('resize', handleResize)
+        //initial column check
+        handleResize()
+
         const lazyLoadInstance = new LazyLoad()
         lazyLoadInstance.update()
 
@@ -71,7 +80,7 @@ const Gallery = ({ images }) => {
                     <img
                         className={'lazy'}
                         key={i}
-                        data-src={imageData.thumbnailUrl}
+                        data-src={imageData.url}
                         src={
                             'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPjxwYXRoIGQ9Ik0wIDBoMXYxSDAiIGZpbGw9IiNiN2MzZjNmZiIvPjwvc3ZnPg=='
                         }
