@@ -24,7 +24,7 @@ const CONFIG = [
 
 const Gallery = ({ images }) => {
     const [columns, setColumns] = React.useState(getColumns())
-    const [gallery, setGallery] = React.useState(getGallery(columns, images))
+    const [gallery, setGallery] = React.useState([])
 
     //re-render if col no changes
     React.useEffect(() => {
@@ -79,7 +79,7 @@ const Gallery = ({ images }) => {
 
     return (
         <>
-            <p>Number of columns: {columns}</p>
+            <p>Number of columns: {gallery.length}</p>
             <div className={galleryContainer}>
                 {gallery.map((col, i) => {
                     return (
