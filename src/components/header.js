@@ -90,28 +90,28 @@ const Header = () => {
                         <h6
                             className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
                         >
-                            <a href="#">Home</a>
+                            <a href="/">Home</a>
                         </h6>
                     </li>
                     <li>
                         <h6
                             className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
                         >
-                            <a href="#">About</a>
+                            <a href="/">About</a>
                         </h6>
                     </li>
                     <li>
                         <h6
                             className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
                         >
-                            <a href="#">Portfolio</a>
+                            <a href="/">Portfolio</a>
                         </h6>
                     </li>
                     <li>
                         <h6
                             className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
                         >
-                            <a href="#">Shop</a>
+                            <a href="/">Shop</a>
                         </h6>
                     </li>
                 </ul>

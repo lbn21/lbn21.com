@@ -1,9 +1,8 @@
 import * as React from 'react'
 import LazyLoad from 'vanilla-lazyload'
 
-import { galleryContainer } from '../css/gallery.module.css'
+import { galleryContainer, column, item } from '../css/gallery.module.css'
 
-const COLUMNS = 1 //default columns count
 const CONFIG = [
     {
         breakpoint: 700,
@@ -24,24 +23,28 @@ const CONFIG = [
 ]
 
 const Gallery = ({ images }) => {
-    //column count
-    const [columns, setColumns] = React.useState(null)
+    const [columns, setColumns] = React.useState(0)
+    const [gallery, setGallery] = React.useState([])
 
     //re-render if col no changes
     React.useEffect(() => {
-        if (!columns) return
+        if (columns === 0) return
+        setGallery(() => {
+            const newArray = Array.from({ length: columns }, () => [])
 
-        const galleryData = new Array(columns).fill(null).map((_) => [])
-        for (let i = 0; i < images.length; i++) {
-            const col = i % columns
-            galleryData[col].push(images[i].node)
-        }
-        console.log(galleryData)
-    }, [columns])
+            const newImages = [...images, ...images]
+
+            for (let i = 0; i < newImages.length; i++) {
+                const col = i % columns
+                newArray[col].push(newImages[i].node)
+            }
+            return newArray
+        })
+    }, [columns, images])
 
     React.useEffect(() => {
         function handleResize() {
-            let cols = COLUMNS //start with default count
+            let cols = 1 //start with default count: 1
 
             //we loop through config backwards to match the highest resolution first
             for (let i = CONFIG.length - 1; i >= 0; i--) {
@@ -72,25 +75,24 @@ const Gallery = ({ images }) => {
     }, [])
 
     return (
-        <div className={galleryContainer}>
+        <>
             <p>Number of columns: {columns}</p>
-            {images.map((image, i) => {
-                const imageData = image.node
-                return (
-                    <img
-                        className={'lazy'}
-                        key={i}
-                        data-src={imageData.url}
-                        src={
-                            'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPjxwYXRoIGQ9Ik0wIDBoMXYxSDAiIGZpbGw9IiNiN2MzZjNmZiIvPjwvc3ZnPg=='
-                        }
-                        alt={imageData.title}
-                        width={315}
-                        height={315}
-                    />
-                )
-            })}
-        </div>
+            <div className={galleryContainer}>
+                {gallery.map((col, i) => {
+                    return (
+                        <div className={column} key={i}>
+                            {col.map((image, j) => {
+                                return (
+                                    <div className={item} key={j}>
+                                        <img src={image.url} alt="" />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )
+                })}
+            </div>
+        </>
     )
 }
 
