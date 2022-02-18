@@ -22,6 +22,8 @@ const CONFIG = [
     },
 ]
 
+const isBrowser = typeof window !== 'undefined'
+
 const Gallery = ({ images }) => {
     const [columns, setColumns] = React.useState(getColumns())
     const [gallery, setGallery] = React.useState([])
@@ -64,11 +66,11 @@ const Gallery = ({ images }) => {
 
         //we loop through config backwards to match the highest resolution first
         for (let i = CONFIG.length - 1; i >= 0; i--) {
-            const { breakpoint, columns } = CONFIG[i]
+            const { breakpoint: bp, columns } = CONFIG[i]
             //check if breakpoint is matched
             if (
-                window.matchMedia(`screen and (min-width: ${breakpoint}px)`)
-                    .matches
+                isBrowser &&
+                window.matchMedia(`screen and (min-width: ${bp}px)`).matches
             ) {
                 cols = columns
                 break //match found. break
@@ -79,21 +81,21 @@ const Gallery = ({ images }) => {
 
     return (
         <>
-            <p>Number of columns: {gallery.length}</p>
             <div className={galleryContainer}>
-                {gallery.map((col, i) => {
-                    return (
-                        <div className={column} key={i}>
-                            {col.map((image, j) => {
-                                return (
-                                    <div className={item} key={j}>
-                                        <img src={image.url} alt="" />
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    )
-                })}
+                {gallery.length > 0 &&
+                    gallery.map((col, i) => {
+                        return (
+                            <div className={column} key={i}>
+                                {col.map((image, j) => {
+                                    return (
+                                        <div className={item} key={j}>
+                                            <img src={image.url} alt="" />
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        )
+                    })}
             </div>
         </>
     )
