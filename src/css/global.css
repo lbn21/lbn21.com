@@ -10,11 +10,15 @@ html.no-scroll body {
     box-sizing: border-box;
 }
 
+html,
+body {
+    font-size: var(--font-size-s);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: var(--charcoal);
-    font-size: var(--font-size-m);
     letter-spacing: 0;
     overflow-x: hidden;
     font-synthesis: none;
@@ -22,9 +26,19 @@ body {
     direction: ltr;
 }
 
-@media (min-width: 992px) {
+/* small screens */
+@media screen and (min-width: 60em) {
+    html,
     body {
-        font-size: var(--font-size-d);
+        font-size: var(--font-size-m);
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 81em) {
+    html,
+    body {
+        font-size: var(--font-size-l);
     }
 }
 

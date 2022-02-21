@@ -1,9 +1,29 @@
 /* LAYOUT */
 .container {
     margin: 0 auto;
-    max-width: 1440px;
-    padding: 0 var(--p-x);
+    width: 90%;
     position: relative;
+}
+
+/* tablets */
+@media screen and (min-width: 42em) {
+    .container {
+        width: 85%;
+    }
+}
+
+/* small screens */
+@media screen and (min-width: 60em) {
+    .container {
+        width: 80%;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 81em) {
+    .container {
+        width: 75%;
+    }
 }
 
 .section-xl {
@@ -25,7 +45,7 @@
 }
 
 .letter-spacing-2 {
-    letter-spacing: 2px;
+    letter-spacing: 0.125em;
 }
 
 /* SPACING (margins and paddings) */

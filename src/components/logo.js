@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 import { logo } from '../css/header.module.css'
 
-const Logo = ({ color }) => (
+const Logo = ({ color, height }) => (
     <svg
-        height="20"
+        height={height}
         viewBox="0 0 103 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -28,10 +28,12 @@ const Logo = ({ color }) => (
 
 Logo.propTypes = {
     color: PropTypes.string,
+    height: PropTypes.string,
 }
 
 Logo.defaultProps = {
     color: '#cf1259ff',
+    height: '1rem',
 }
 
 export default Logo

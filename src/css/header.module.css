@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--p-header-y) var(--p-header-x);
+    padding: var(--p-header-y) 0;
 }
 
 .menu {
@@ -30,8 +30,17 @@
     transition: opacity var(--side-bar-delay) ease-out;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
     touch-action: none;
+}
+
+.menu-list {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .toggle {

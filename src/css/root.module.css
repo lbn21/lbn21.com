@@ -8,15 +8,15 @@
     --white: #fff;
 
     /* SIZES */
-    --font-size-m: 14px;
-    --font-size-d: 16px;
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 18px;
     --logo-h: 1rem;
     --toggle-height: 48px; /* used by hamburger-react npm package */
 
     /* SPACING */
     --p-x: 2rem;
     --p-header-y: 1rem;
-    --p-header-x: 2rem;
 
     /* ANIMATIONS */
     --side-bar-delay: 0.2s;

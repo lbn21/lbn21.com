@@ -10,10 +10,12 @@ import {
     uppercase,
     letterSpacing2,
 } from '../css/layout.module.css'
+
 import {
     header,
     headerContainer,
     menu,
+    menuList,
     isActive,
     toggle,
     logo,
@@ -85,7 +87,7 @@ const Header = () => {
                 </div>
             </div>
             <div className={`${menu}`} ref={modal}>
-                <ul className={listUnstyled}>
+                <ul className={`${listUnstyled} ${menuList}`}>
                     <li>
                         <h6
                             className={`${fontWeightNormal} ${uppercase} ${letterSpacing2}`}
@@ -115,6 +117,13 @@ const Header = () => {
                         </h6>
                     </li>
                 </ul>
+                <div className="col-12 col-md-6">
+                    <h5 className={fontWeightNormal}>Contact Info:</h5>
+                    <ul className={listUnstyled}>
+                        <li>123 Example Rd, Example City PostCode</li>
+                        <li>contact@example.com</li>
+                    </ul>
+                </div>
             </div>
         </header>
     )
