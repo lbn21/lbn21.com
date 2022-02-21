@@ -2,17 +2,34 @@
     --gap: 1rem;
     display: flex;
     gap: var(--gap, 1rem);
+    flex-direction: column;
 }
 
-.column {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap, 1rem);
+.item {
+    overflow: hidden;
 }
 
 .item img {
     display: block;
     width: 100%;
-    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    transform: perspective(0) scale(1);
+    transition: transform 0.2s;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.item:hover img {
+    transform: scale(1.04);
+}
+
+/* tablets */
+@media screen and (min-width: 42em) {
+    .galleryContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(296px, 1fr));
+    }
 }

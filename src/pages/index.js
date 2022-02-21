@@ -22,6 +22,7 @@ export const query = graphql`
                 node {
                     title
                     url
+                    css
                 }
             }
         }

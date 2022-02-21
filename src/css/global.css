@@ -81,3 +81,8 @@ a {
     color: var(--charcoal);
     transition: color 0.1s linear;
 }
+
+/*lazyload*/
+img:not([src]):not([srcset]) {
+    visibility: hidden;
+}
