@@ -12,55 +12,7 @@
     padding: var(--p-header-y) 0;
 }
 
-.menu {
-    --padding-x: calc(var(--p-x) * 2);
-    --padding-y: calc(var(--p-header-y) * 2 + var(--toggle-height));
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: var(--padding-y) var(--padding-x);
-    background: var(--cyclamen);
-    color: var(--charcoal);
-    z-index: 2;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--side-bar-delay) ease-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    touch-action: none;
-}
-
-.menu-list {
-    height: 100%;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.toggle {
-    z-index: 3;
-    margin-right: -16px; /* this is to align hambuger menu properly. May need tweaking. */
-}
-
 .logo {
     text-align: center;
     height: var(--logo-h);
-}
-
-.header.is-active .menu {
-    visibility: visible;
-    opacity: 1;
-}
-
-.header.is-active .menu a:hover {
-    color: black;
-}
-
-.header.is-active .toggle {
 }
